@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width,user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="shortcut icon" href="https://www.quickpayportal.com/home/portal/favicon.ico" type = "image/png" />
+    <title>QuickPay Portal</title>
+  </head>
+  <body>
+	<div class="free-space">
+		<div style="width: 100%; padding-left: 25px;">
+		<img src="./assets/as.png" alt="QPP logo" style="height:70px;">
+		</div>
+		<div style="margin-top:20px; padding: 10px 40px;background: rgb(255, 212, 212);border: 1px solid rgb(182, 33, 33);width:100%;">
+			<span class="notice"><img src="https://www.quickpayportal.com/home/static_20210322/portal/images/2012/sprites/icon-emergency.png" style="vertical-align: middle;"> Dial 911 in case of medical emergency</span>
+		</div>
+	</div>
+
+	<!-- modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" style="width: fit-content;">
+			<div class="modal-content" style="width:fit-content;">
+			<div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel" style="color:#7E589B; text-decoration: none;">Find Your QuickPay Code on Your Bill</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="./assets/findCode.41acfbf9.png" alt="patient-id">
+			</div>
+			<!-- <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div> -->
+			</div>
+		</div>
+	</div>
+
+
+	<div class="continer">
+		<br>
+		<br>
+		<br>
+		<br>
+    <h1 id="first-header">Welcome to QuickPay Portal</h1>
+	    <br>
+		<br>
+		
+		<div class="container" style="width:60%;">
+			<div class="row">
+                <div class="col" style="text-align: left;">
+                   <p>To sign in, enter the QuickPay Code, also known as Statement ID or Access Code, from your patient statement, then click <strong>Sign In</strong>.</p>
+				   <p><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Where can I find my code?</a></p>
+				   <p><span style="font-weight: 600;">Note:</span> <span style="font-size: small;">This page should only be accessed by the patient or those authorized by the patient (e.g guarantor). By clicking Sign In, you represent that you are authorized to address the patient's billing matters.</span></p>
+				</div>
+				<div class="col" style="padding-left: 40px;">
+				<p style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; text-align: left; padding-left: 5;">QuickPay Code,Statement ID, or<br> Access Code</p>
+				<form id="my-form" action = "details.html" style="text-align: left;"><input type="text" style="width: 80%;" id="patient-id" required><br><br><button type="submit" id="btn1" style="width: 80%;">Sign in</button></form>
+				</div>
+
+				<div class="bottom-spacer">&nbsp;</div>
+
+				
+		    </div>
+			<div class="info_banner" style="text-align: left; width:90%;" >
+					<div class="info_banner_items">
+						<div class="info_banner_item">
+							<div class="info_banner_item_header">Hi! QuickPay Portal is now available on MOBILE devices.</div>
+							<div class="info_banner_item_contents">Please use quickpayportal.com to proceed with payments on mobile devices.</div>
+						</div>
+					</div>
+				</div>
+	    </div>
+		<br>
+		<br>
+		<hr>
+		<br>
+		<br>
+		<br>
+
+	</div>
+
+ 
+<script>
+	var input2 = document.getElementById("patient-id");
+	// var val = input2.value;
+	var btn1 = document.getElementById("btn1");
+    // btn1.addEventListener("click",()=>{
+    //     // console.log(input2.value);
+	// 	// if(input2.value!=null)
+	// 	   localStorage.setItem("patient-id", input2.value);
+	// });
+	document.forms[0].onsubmit = function(){
+		 localStorage.setItem("patient-id", input2.value);
+
+	}
+    // document.querySelector("#my-form").addEventListener("submit", function(e){
+    // if(!isValid){
+    //     e.preventDefault();    //stop form from submitting
+    //     localStorage.setItem("patient-id", input2.value);
+	// }
+// });
+</script>
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+</html>

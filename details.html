@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://www.quickpayportal.com/home/portal/favicon.ico" type = "image/png" />
+    <title>QuickPay Portal</title>
+    <style>
+         
+
+         body{
+             font-family: Arial, Helvetica, sans-serif;
+         }
+         .first-container{
+             width:100%;
+             margin:50px auto;
+             text-align: center;
+             /* margin-bottom: 100px; */
+         }
+         .image{
+             margin:auto;
+             width:300px;
+             height:100px;
+         }
+         .second-container{
+             width:60%;
+             margin:auto;
+            border-radius:5px;
+            border:1px solid grey;
+            margin-bottom: 100px;
+         }
+         .header-design{
+             background-color: rgb(233, 233, 233); height:40px; width:100%;border-top-left-radius: 5px; border-top-right-radius: 5px; text-align: right;
+             padding: 10px;
+         }
+         h5{
+             color:rgb(104, 104, 104);
+             margin:20px 40px;
+         }
+         .btn{
+             padding:10px;
+             border: 1px solid green;
+             background-color: rgb(22, 105, 22);
+             color:white;
+         }
+         a:hover{
+             color:white;
+         }
+    </style>
+  </head>
+  <body>
+    <div class="first-container">
+        <img src="assets/as.png" class="image">
+    </div>
+    <div class="second-container">
+        <div class="header-design">
+           <a href="index.html">sign out</a>
+        </div>
+        <div>
+            <h5>QuickPay</h5>
+            <p style="font-size: small; margin:0 40px;">The table below list your recent charges.Enter the amount your want to pay. Then click <strong>Make a Payment</strong> to pay with your credit card<br><br>
+            <strong>Note:</strong> Balances that are more than 94 days overdue may be sent to a collection agency<br></p>
+            <p style="margin:5px 40px;">Enter Amount $:</p><form action="checkout.html"><input type="text" id="input1" style="margin:0 40px; border-radius: 2px; border-width: 1px; width: 150px;" required> 
+            <hr>
+           <div style="text-align: right; width: 100%; padding-right: 40px;"> Total: $<span id="amount">0</span>    </div>
+           <hr>
+           <div style="text-align: right; width: 100%; padding-right: 40px; margin:20px;">  <button class="btn" type="submit">Make a Payment</a></div></form>
+        </div>
+    </div>
+    <script>
+
+        var input1 = document.getElementById("input1");
+        // input1.addEventListener("keypress",()=>{
+        //   document.getElementById("amount").innerText = val;
+        // })
+        input1.addEventListener("keyup",()=>{
+          document.getElementById("amount").innerText = input1.value;
+        })
+
+        document.forms[0].onsubmit = function(){
+		 localStorage.setItem("amount", input1.value);
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
